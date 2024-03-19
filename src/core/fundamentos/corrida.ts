@@ -1,16 +1,17 @@
-import { terminal } from "terminal-kit";
-import Fusca from "./Fusca";
+import Carro from "./Carro";
+import TerminalUtil from "@/app/util/TerminalUtil";
 
-export default function corrida() {
-    const carro = new Fusca()
+export default function corrida(carro: Carro) {
+    TerminalUtil.titulo("Corrida")
+    TerminalUtil.exibirChaveValor("### Carro: ", carro.constructor.name)
 
     Array.from({length: 10}).forEach(() => {
         carro.acelerar()
-        terminal.red(`\nVelocidade: ${carro.velocidadeAtual}`)
+        TerminalUtil.exibirChaveValor(`Velocidade: `, `${carro.velocidadeAtual} km/h`)
     })
 
     Array.from({length: 10}).forEach(() => {
         carro.frear()
-        terminal.red(`\nVelocidade: ${carro.velocidadeAtual}`)
+        TerminalUtil.exibirChaveValor(`Velocidade: `, `${carro.velocidadeAtual} km/h`)
     })
 }
