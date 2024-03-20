@@ -1,17 +1,13 @@
 import Carro from "./Carro";
-import TerminalUtil from "@/app/util/TerminalUtil";
 
-export default function corrida(carro: Carro) {
-    TerminalUtil.titulo("Corrida")
-    TerminalUtil.exibirChaveValor("### Carro: ", carro.constructor.name)
-
+export default function corrida(carro: Carro, logger: (str: string) => void = console.log) {
     Array.from({length: 10}).forEach(() => {
         carro.acelerar()
-        TerminalUtil.exibirChaveValor(`Velocidade: `, `${carro.velocidadeAtual} km/h`)
+        logger(`\nVelocidade: ${carro.velocidadeAtual} km/h`)
     })
 
     Array.from({length: 10}).forEach(() => {
         carro.frear()
-        TerminalUtil.exibirChaveValor(`Velocidade: `, `${carro.velocidadeAtual} km/h`)
+        logger(`\nVelocidade: ${carro.velocidadeAtual} km/h`)
     })
 }
