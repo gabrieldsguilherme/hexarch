@@ -1,7 +1,7 @@
 import TerminalUtil from "@/app/util/TerminalUtil";
 import polimorfismo from "../fundamentos/polimorfismo";
 import dip from "../fundamentos/dip";
-import registrarUsuario from "../usuario/regsitrarUsuario";
+import registrarUsuario from "../usuario/registrarUsuario";
 
 export default async function menuUsuario() {
     TerminalUtil.titulo('Usuário')

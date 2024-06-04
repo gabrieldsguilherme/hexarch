@@ -4,8 +4,8 @@ import Usuario from "../model/Usuario";
 export default class RegistrarUsuario implements CasoDeUso<Usuario, void> {
 
     async executar(usuario: Usuario): Promise<void> {
-        const senhaCriptografada = usuario.senha.split('').reverse().join()
-        console.log(senhaCriptografada)
+        const senhaCriptografada = usuario.senha.split('').reverse().join('')
+        console.log(`\n\n${senhaCriptografada}`)
     }
     
 }
